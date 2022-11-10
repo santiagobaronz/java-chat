@@ -7,7 +7,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Cliente extends JFrame {
+/**
+ *
+ * @author Santiago Baron Zuleta, Sebastian Yepes, Mauricio Sanchez
+ * 
+ */
+
+public class Cliente{
 
     private JTextField campoIntroducir;
     private JTextArea areaPantalla;
@@ -16,6 +22,7 @@ public class Cliente extends JFrame {
     private String mensaje = "";
     private String servidorChat;
     private Socket cliente;
+    private JButton sendbutton;
     
     Propiedades props = new Propiedades();
     String[] propiedades = props.getProperties();
@@ -34,8 +41,26 @@ public class Cliente extends JFrame {
             ChatVentana vista1 = new ChatVentana("Chat del cliente");
             vista1.setVisible(true);
 
+            // Se llaman las variables de campo de texto y boton
             areaPantalla = vista1.campoPantalla;
             campoIntroducir = vista1.campoTexto;
+            sendbutton = vista1.sendButton;
+            
+            // ActionListener para el boton
+            
+            sendbutton.addActionListener(
+                    new ActionListener() {
+
+                // enviar mensaje al cliente
+                public void actionPerformed(ActionEvent evento) {
+                    enviarDatos(campoIntroducir.getText());
+                    campoIntroducir.setText("");
+                }
+            }
+            );
+            
+             // ActionListener para el campo de texto
+            
             campoIntroducir.addActionListener(
                     new ActionListener() {
 
@@ -183,7 +208,6 @@ public class Cliente extends JFrame {
             aplicacion = new Cliente(args[0]);
         }
 
-        aplicacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aplicacion.ejecutarCliente();
     }
 

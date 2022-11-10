@@ -6,8 +6,8 @@ package Vista;
 
 /**
  *
- * @author Santiago Baron Zuleta, Claudia Tatiana Ospina Castiblanco, Santiago
- * Morales Ariza
+ * @author Santiago Baron Zuleta, Sebastian Yepes, Mauricio Sanchez
+ * 
  */
 public class ChatVentana extends javax.swing.JFrame {
     
@@ -35,7 +35,7 @@ public class ChatVentana extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         campoPantalla = new javax.swing.JTextArea();
         campoTexto = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        sendButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,13 +58,13 @@ public class ChatVentana extends javax.swing.JFrame {
         campoTexto.setForeground(new java.awt.Color(255, 255, 255));
         campoTexto.setMargin(new java.awt.Insets(20, 20, 20, 20));
 
-        jButton1.setBackground(new java.awt.Color(102, 16, 242));
-        jButton1.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Enviar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sendButton.setBackground(new java.awt.Color(102, 16, 242));
+        sendButton.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
+        sendButton.setForeground(new java.awt.Color(255, 255, 255));
+        sendButton.setText("Enviar");
+        sendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sendButtonActionPerformed(evt);
             }
         });
 
@@ -83,7 +83,7 @@ public class ChatVentana extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(campoTexto)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(sendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,7 +96,7 @@ public class ChatVentana extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -123,18 +123,18 @@ public class ChatVentana extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_sendButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextArea campoPantalla;
     public javax.swing.JTextField campoTexto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton sendButton;
     private javax.swing.JLabel tituloConexion;
     // End of variables declaration//GEN-END:variables
 }

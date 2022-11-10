@@ -9,12 +9,12 @@ import java.io.InputStream;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 
-
 /**
  *
- * @author Santiago Baron Zuleta, Claudia Tatiana Ospina Castiblanco, Santiago
- * Morales Ariza
+ * @author Santiago Baron Zuleta, Sebastian Yepes, Mauricio Sanchez
+ * 
  */
+
 public class Propiedades {
     
     String[] properties = null;

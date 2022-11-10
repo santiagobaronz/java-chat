@@ -10,7 +10,13 @@ import java.awt.event.*;
 import java.util.Properties;
 import javax.swing.*;
 
-public class Servidor extends JFrame {
+/**
+ *
+ * @author Santiago Baron Zuleta, Sebastian Yepes, Mauricio Sanchez
+ * 
+ */
+
+public class Servidor{
 
     private JTextField campoIntroducir;
     private JTextArea areaPantalla;
@@ -19,6 +25,7 @@ public class Servidor extends JFrame {
     private ServerSocket servidor;
     private Socket conexion;
     private int contador = 1;
+    private JButton sendbutton;
 
 
     // configurar GUI
@@ -42,9 +49,28 @@ public class Servidor extends JFrame {
             servidor = new ServerSocket(server_port, 100);
             ChatVentana vista1 = new ChatVentana("Chat del servidor");
             vista1.setVisible(true);
+            
+            // Se llaman las variables de campo de texto y boton
 
             areaPantalla = vista1.campoPantalla;
             campoIntroducir = vista1.campoTexto;
+            sendbutton = vista1.sendButton;
+            
+            // ActionListener para el boton
+            
+            sendbutton.addActionListener(
+                    new ActionListener() {
+
+                // enviar mensaje al cliente
+                public void actionPerformed(ActionEvent evento) {
+                    enviarDatos(campoIntroducir.getText());
+                    campoIntroducir.setText("");
+                }
+            }
+            );
+            
+            // ActionListener para el campo de texto
+            
             campoIntroducir.addActionListener(
                     new ActionListener() {
 
@@ -189,7 +215,6 @@ public class Servidor extends JFrame {
 
     public static void main(String args[]) {
         Servidor aplicacion = new Servidor();
-        aplicacion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aplicacion.ejecutarServidor();
     }
 
