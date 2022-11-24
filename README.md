@@ -4,7 +4,8 @@ Chat in Java with Sockets between a client and a server.
 
 ## Preview project 📸
 
-![](https://i.imgur.com/UyD7SuM.png)
+![](https://i.imgur.com/Dqu2WU3.png)
+![](https://i.imgur.com/cgWckyB.png)
 
 ## Installation 💻💡
 
@@ -17,7 +18,7 @@ To install the project on your computer, you can use the "Code" button and follo
 - Write ``` git clone ``` and paste the url. As follows:
 
 ``` 
-git clonehttps://github.com/santiagobaronz/java-chat.git
+git clone https://github.com/santiagobaronz/Programation-advance.git
 ```
 
 ### 2️⃣ Download ZIP
